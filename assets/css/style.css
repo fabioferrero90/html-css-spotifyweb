@@ -61,9 +61,12 @@ a:hover {
   color:white;
 }
 
+.btn {
+  transition: transform ease 0.3s;
+}
+
 .btn:hover {
   transform:scale(1.05);
-  transition: transform 0.3s;
 }
 
 h2 {
@@ -83,6 +86,9 @@ svg {
   overflow: auto;
 }
 
+.mobile {
+  display: none;
+}
 /* Body Syzing \ Layout  */
 
 .main-wrapper {
@@ -105,15 +111,16 @@ svg {
  }
 
 /* Left Sidebar CSS  */
-.logo {
+.desktop.logo {
   width: 115px;
+  transition:transform ease .3s;
 }
 
-.mobile-logo {
-  display:none;
+.desktop.logo:hover {
+  transform:scale(1.2) translateX(10px)
 }
 
-.logo:hover {
+.desktop.logo:hover {
   cursor: pointer;
 }
 
@@ -127,25 +134,26 @@ svg {
   justify-content: space-between;
   height:100px;
   margin: 2rem 0;
+  gap:2px;
 }
 
-.side-menu ul li a{
+.side-menu ul li a {
   position: relative;
   height:25px;
-  color:var(--secondary-color)
+  color:var(--secondary-color);
 }
 
-.side-menu ul li a.active{
+.side-menu ul li a.active {
   height:25px;
   color: white;
 }
 
-.side-menu .active svg{
+.side-menu .active svg {
   height:25px;
   fill: white;
 }
 
-.side-menu .active::before{
+.side-menu .active::before {
   content: '';
   position: absolute;
   top: 0;
@@ -155,12 +163,12 @@ svg {
   background-color: greenyellow;
 }
 
-.side-menu ul li a:hover{
+.side-menu ul li a:hover {
   color:white;
 }
 
-.side-menu ul li a:hover svg{
-  fill:white!important;
+.side-menu ul li a:hover svg {
+  fill:white;
 }
 
 .side-menu ul li a > * {
@@ -208,11 +216,11 @@ svg {
   height:calc(100vh - 500px);
 }
 
-.playlist-nav li{
+.playlist-nav li {
   padding:10px 0;
 }
 
-.playlist-nav a:hover{
+.playlist-nav a:hover {
   color:white;
 }
 
@@ -283,10 +291,12 @@ svg {
   height:100%;
   color:var(--secondary-color);
   font-weight: 700;
+  transition: transform ease 0.3s;
 }
 
 .main-content .categories-menu ul a:hover {
   color: white;
+  transform:scale(1.1)
 }
 
 .main-content .categories-menu ul a.active::after {
@@ -339,7 +349,6 @@ svg {
 }
 
 .main-content .grid .item {
-  position:relative;
   width: calc(100% / 6 - 15px);
 }
 
@@ -350,6 +359,7 @@ svg {
 .main-content .grid .cover {
   position:relative;
   cursor:pointer;
+  transition: transform ease .3s;
 }
 
 .main-content .grid .cover:hover::after {
@@ -362,6 +372,10 @@ svg {
   top:50%;
   left:50%;
   transform: translate(-50%, -50%);
+}
+
+.main-content .grid .cover:hover {
+  transform:scale(1.08)
 }
 
 .main-content .grid .cover:hover img {
@@ -397,6 +411,7 @@ svg {
 
 .playing .playing-info span {
   font-size:.7rem;
+  transition: transform ease 0.3s;
 }
 
 .playing .playing-info h5 {
@@ -426,15 +441,16 @@ svg {
 .music-controls .action-buttons i {
   color:white;
   font-size: 1.5rem;
+  transition: transform ease 0.3s;
 }
 
 .music-controls .action-buttons i:hover{
-  transform:scale(1.1);
+  transform:scale(1.2);
 }
 
 .music-controls .progressbar {
-  justify-content: center;
-  align-items: space-around;
+  justify-content: space-around;
+  align-items: center;
   width:40vw;
   max-width:430px;
 }
@@ -457,6 +473,7 @@ svg {
   width: 15%;
   left: 0;
   border-radius:3rem;
+  transition:height ease .1s;
 }
 
 .music-controls .progress-bar .progress-bar-elapsed::after {
@@ -467,10 +484,11 @@ svg {
   content:'\f111';
   color:white;
   right:0;
-  top:-100%;
+  top:-50%;
 }
 
 .music-controls .progress-bar:hover .progress-bar-elapsed {
+  height:8px;
   background-color: yellowgreen;
 }
 
@@ -493,11 +511,17 @@ svg {
 
 .play-bar .volume-controls .volume-bar {
   position:relative;
-  width:5vw;
+  width:10vw;
+  max-width:100px;
   height:5px;
   background-color: var(--secondary-color);
   border-radius: 3rem;
   cursor: pointer;
+}
+
+.volume-controls .volume-bar {
+  justify-content: center;
+  align-items: center;
 }
 
 .play-bar .volume-controls .volume-bar .volume-bar-set {
@@ -507,6 +531,7 @@ svg {
   width:20%;
   background-color: white;
   border-radius: 3rem;
+  transition:height ease .1s;
 }
 
 .play-bar .volume-controls .volume-bar .volume-bar-set::after {
@@ -517,10 +542,11 @@ svg {
   content:'\f111';
   color:white;
   right:-50%;
-  top:-100%;
+  top:-50%;
 }
 
 .play-bar .volume-controls .volume-bar:hover .volume-bar-set {
+  height:8px;
   background-color: yellowgreen;
 }
 
@@ -556,11 +582,11 @@ svg {
 
 @media (max-width:600px) {
 
-  .logo {
+  .desktop.logo {
     display:none
   }
 
-  .mobile-logo {
+  .mobile.logo {
     display:block;
     filter:invert(1);
   }
@@ -603,5 +629,26 @@ svg {
 
   .side-menu ul svg {
     margin:0;
+  }
+  
+  
+
+}
+
+@media (max-width:500px) {
+  .volume-controls {
+    flex-direction: column;
+  }
+
+  .volume-controls .utility-buttons{
+    padding-bottom:10px;
+  }
+
+  .volume-controls > a i {
+    transform:translateY(-5px)
+  }
+
+  .main-content .categories-menu ul a {
+    font-size:.75rem;
   }
 }
