@@ -420,7 +420,6 @@ svg {
 
 .music-controls .action-buttons i:hover{
   transform:scale(1.1);
-  color: greenyellow;
 }
 
 .music-controls .progressbar {
