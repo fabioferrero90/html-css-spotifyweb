@@ -106,7 +106,7 @@ svg {
 
 /* Left Sidebar CSS  */
 .logo {
-  max-width: 70%;
+  width: 115px;
 }
 
 .logo:hover {
@@ -265,6 +265,7 @@ svg {
 .main-content .categories-menu ul {
   width: 100%;
   justify-content: center;
+  flex-wrap: wrap;
   gap:25px;
 }
 
@@ -341,6 +342,27 @@ svg {
   border-radius:50%;
 }
 
+.main-content .grid .cover {
+  cursor:pointer;
+  position:relative;
+}
+
+.main-content .grid .cover::after {
+  position:absolute;
+  top:10px;
+  left:10px;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  font-size: 5rem;
+  content:'\f144';
+  color:white;
+  z-index:999;
+}
+
+.main-content .grid .cover:hover {
+  opacity:0.3;
+}
+
 /* Play Bar CSS */
 
 .play-bar {
@@ -349,9 +371,153 @@ svg {
   height:90px;
   background-color: var(--playBar-color);
   color:white;
+  padding:20px;
 }
 
+.play-bar > div {
+  width: calc(100% / 3)
+}
 
+.playing {
+  flex-basis: calc(100% / 3);
+  justify-content: start;
+  align-items: center;
+  gap: 25px;
+}
+
+.playing .album {
+  width:40px;
+}
+
+.playing .playing-info span {
+  font-size:.7rem;
+}
+
+.playing .playing-info span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color:white;
+}
+
+.playing .playing-actions a {
+  margin:5px;
+}
+
+.play-bar .music-controls {
+  width:50vw;
+  max-width:430px;
+}
+
+.music-controls .action-buttons {
+  justify-content: space-around;
+  padding-bottom: 1rem;
+}
+
+.music-controls .action-buttons i {
+  color:white;
+  font-size: 1.5rem;
+}
+
+.music-controls .action-buttons i:hover{
+  transform:scale(1.1);
+  color: greenyellow;
+}
+
+.music-controls .progressbar {
+  justify-content: center;
+  align-items: space-around;
+  width:50vw;
+  max-width:430px;
+}
+
+.music-controls .progress-bar {
+  position:relative;
+  align-items: center;
+  width:40vw;
+  height:5px;
+  background-color: var(--secondary-color);
+  margin:0 20px;
+  border-radius:3rem;
+  cursor: pointer;
+}
+
+.music-controls .progress-bar .progress-bar-elapsed {
+  position:absolute;
+  background-color: white;
+  height: 5px;
+  width: 15%;
+  left: 0;
+  border-radius:3rem;
+}
+
+.music-controls .progress-bar .progress-bar-elapsed::after {
+  display:none;
+  position:absolute;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  content:'\f111';
+  color:white;
+  right:0;
+  top:-100%;
+}
+
+.music-controls .progress-bar:hover .progress-bar-elapsed {
+  background-color: yellowgreen;
+}
+
+.music-controls .progress-bar:hover .progress-bar-elapsed::after {
+  display:block;
+}
+
+.music-controls .time {
+  font-size: .8rem; 
+}
+
+.play-bar .volume-controls {
+  justify-content: end;
+  align-items: center;
+}
+
+.play-bar .volume-controls i {
+  padding: 0 5px;
+}
+
+.play-bar .volume-controls .volume-bar {
+  position:relative;
+  width:5vw;
+  height:5px;
+  background-color: var(--secondary-color);
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.play-bar .volume-controls .volume-bar .volume-bar-set {
+  position:absolute;
+  height:5px;
+  left: 0;
+  width:20%;
+  background-color: white;
+  border-radius: 3rem;
+}
+
+.play-bar .volume-controls .volume-bar .volume-bar-set::after {
+  display: none;
+  position:absolute;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 900;
+  content:'\f111';
+  color:white;
+  right:-50%;
+  top:-100%;
+}
+
+.play-bar .volume-controls .volume-bar:hover .volume-bar-set {
+  background-color: yellowgreen;
+}
+
+.play-bar .volume-controls .volume-bar:hover .volume-bar-set::after {
+  display:block
+}
 
 /* Nasconde la sezione account se la finestra è troppo bassa  */
 @media (max-height:590px) {
@@ -360,5 +526,63 @@ svg {
   }
   .playlist-nav {
     height:calc(100vh - 400px);
+  }
+}
+
+@media (max-width:1100px) {
+  .main-content .grid .item {
+    width: calc(100% / 4 - 15px);
+  }
+}
+
+@media (max-width:700px) {
+  .main-content .grid .item {
+    width: calc(100% / 3 - 15px);
+  }
+
+  .playing .playing-info span {
+    font-size: .5rem;
+  }
+}
+
+@media (max-width:600px) {
+  .main-content .grid .item {
+    width: calc(100% / 2 - 15px);
+  }
+
+  .sidebar-wrapper {
+    width:50px;
+  }
+  
+  .main-content {
+    width:calc(100vw - 50px)
+  }
+
+  .sidebar-wrapper {
+    text-align: center;
+  }
+
+  .side-menu ul a span{
+    display:none;
+  }
+  
+  .sidebar .playlist {
+    display:none;
+  }
+
+  .sidebar-wrapper {
+    padding:10px;
+  }
+
+  .sidebar-wrapper .bottom-bar span {
+    display:none;
+  }
+
+  .side-menu .active::before{
+    left: -13px;
+  }
+
+  .side-menu ul svg {
+    margin:0;
   }
 }

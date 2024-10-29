@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
+  <!-- Font Awesome  -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css' integrity='sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw==' crossorigin='anonymous'/>
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Spotify - Boolean #137 - Esercizio #13</title>
 </head>
@@ -45,7 +46,7 @@
             <div class="section-header">
               <h3>PLAYLIST</h3>
               <div class="action-button">
-                <a href="#"><div class="box">+</div><span>Crea Playlist</span></a>
+                <a href="#"><div class="box">&plus;</div><span>Crea Playlist</span></a>
               </div>
               <ul class="playlist-nav of_auto">
                 <li><a href="#">Nome Playlist</a></li>
@@ -174,9 +175,47 @@
   </main>
 
   <footer class="play-bar d_flex">
-      <div class="playing">IN RIPRODUZIONE</div>
-      <div class="music-controls">CONTROLLI</div>
-      <div class="volume-controls">VOLUME</div>
+      <div class="playing d_flex">
+        <div class="album">
+          <img src="assets/img/sinister.jpeg" alt="Playing">
+        </div>
+        <div class="playing-info">
+          <h5>Sinister</h5>
+          <span>Brano Nome</span>
+        </div>
+        <div class="playing-actions">
+          <a href="#"><i class="far fa-heart"></i></a>
+          <a href="#"><i class="far fa-folder"></i></a>
+        </div>
+      </div>
+      <div class="music-controls">
+        <div class="action-buttons d_flex">
+          <a href="#"><i class="fas fa-random"></i></a>
+          <a href="#"><i class="fas fa-step-backward"></i></a>
+          <a href="#"><i class="far fa-play-circle"></i></a>
+          <a href="#"><i class="fas fa-step-forward"></i></a>
+          <a href="#"><i class="fas fa-rotate-right"></i></a>
+        </div>
+        <div class="progressbar d_flex">
+          <div class="time elapsed">
+            <span>0:25</span>
+          </div>
+          <div class="progress-bar d_flex">
+            <div class="progress-bar-elapsed"></div>
+          </div>
+          <div class="time song-duration">
+            <span>4:35</span>
+          </div>
+        </div>
+      </div>
+      <div class="volume-controls d_flex">
+        <a href="#"><i class="fas fa-list"></i></a>
+        <a href="#"><i class="fas fa-desktop"></i></a>
+        <a href="#"><i class="fas fa-volume-up"></i></a>
+        <div class="volume-bar d_flex">
+          <div class="volume-bar-set"></div>
+        </div>
+      </div>
   </footer>
 
 </body>
