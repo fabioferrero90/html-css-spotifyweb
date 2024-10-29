@@ -2,5 +2,247 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
+} 
+
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
+:root {
+  --playBar-color:#282828;
+  --content-bg: #141922;
+  --sidebar-bg: #000000;
+  --header-bg: #080b12;
+  --secondary-color: #707377;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration:none;
+}
+
+/* Debug  */
+.debug {
+  background-color: rgba(200, 251, 97, 0.486)!important;
+}
+
+/* Utility */
+
+.d_flex {
+  display:flex;
+}
+
+.btn a{
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid white;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-size:.8rem;
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.btn a {
+  color:white;
+}
+
+.btn:hover {
+  transform:scale(1.05);
+  transition: transform 0.3s;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight:900;
+}
+
+/* Body Syzing \ Layout  */
+
+.main-wrapper {
+  justify-content: flex-start;
+  height:calc(100vh - 90px);
+  width:100vw;
+}
+
+.sidebar-wrapper {
+  background-color: var(--sidebar-bg);
+  color:white;
+  overflow: hidden;
+  width:230px;
+  padding:20px;
+}
+
+.sidebar {
+  height: calc(100% - 80px);
+ }
+
+/* Left Sidebar CSS  */
+.logo {
+  max-width: 70%;
+}
+
+.side-menu ul {
+  flex-direction: column;
+  justify-content: space-between;
+  height:100px;
+  margin: 2rem 0;
+}
+
+.side-menu ul li a{
+  height:25px;
+  color:var(--secondary-color)
+}
+
+.side-menu ul li a:hover{
+  color:white;
+}
+
+.side-menu ul li a > * {
+  vertical-align: middle;
+}
+
+.side-menu ul img {
+  max-width: 25px;
+  margin-right:.5rem;
+}
+
+.bottom-bar .account {
+  padding:10px 0;
+}
+
+.bottom-bar * {
+  vertical-align: middle;
+}
+
+.bottom-bar .installapp {
+  padding:10px 0;
+  color:var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.bottom-bar .installapp img {
+  height:20px;
+}
+
+.bottom-bar .account img {
+  margin: 5px 5px 0 0;
+  height:30px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.bottom-bar .account span {
+  font-weight: 700;
+}
+
+/* Main Content CSS  */
+.main-content {
+  background-color: var(--content-bg);
+  color:white;
+  overflow: auto;
+  width:calc(100vw - 230px)
+}
+
+.main-content .music-selection {
+  padding:20px;
+}
+
+.main-content .categories-menu ul {
+  width: 100%;
+  justify-content: center;
+  gap:25px;
+}
+
+.main-content .categories-menu ul li {
+  height:30px;
+}
+
+.main-content .categories-menu ul a {
+  display: inline-block;
+  position: relative;
+  height:100%;
+  color:var(--secondary-color);
+  font-weight: 700;
+}
+
+.main-content .categories-menu ul a:hover {
+  color: white;
+}
+
+.main-content .categories-menu ul a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 2px;
+  background-color: greenyellow;
+}
+
+.main-content .grid-header {
+  padding:30px 0;
+}
+
+.subtitle {
+  font-size:.8rem;
+  display: block;
+  color:var(--secondary-color)
+}
+
+.section-text.subtitle {
+  margin:15px 0;
+}
+
+.main-content .grid .title,
+.main-content .grid .subtitle {
+  margin:10px 0;
+  text-align: center;
+}
+
+.header_message {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height:80px;
+  background-color: var(--header-bg);
+  padding:20px;
+}
+
+.header_message .btn {
+  text-align: right;
+}
+
+.main-content .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.main-content .grid .item {
+  width: calc(100% / 6 - 15px);
+}
+
+.main-content .popular-artists .grid .cover {
+  border-radius:50%;
+}
+
+
+/* Play Bar CSS */
+
+.play-bar {
+  justify-content: space-between;
+  align-items: center;
+  height:90px;
+  background-color: var(--playBar-color);
+  color:white;
+}

@@ -3,10 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Spotify - Boolean #137 - Esercizio #13</title>
 </head>
 <body>
-  
+  <main class="main-wrapper d_flex">
+      
+      <aside class="sidebar-wrapper">
+        <div class="sidebar">
+          <div class="logo">
+            <img src="assets/img/logo.svg" alt="Spotify Logo">
+          </div>
+          <nav class="side-menu">
+            <ul class="d_flex">
+              <li><a href="#"><img src="assets/img/home.svg" alt="Home"><span>Home</span></a></li>
+              <li><a href="#"><img src="assets/img/search.svg" alt="Search"><span>Cerca</span></a></li>
+              <li><a href="#"><img src="assets/img/libreria.svg" alt="Library"><span>Libreria</span></a></li>
+            </ul>
+          </nav>
+          
+        </div>
+        <div class="bottom-bar">
+          <div class="installapp">
+            <img src="assets/img/download.svg" alt="Download">
+            <span>Installa app</span>
+          </div>
+          <div class="account">
+            <img src="assets/img/profile.svg" alt="">
+            <span>John Doe</span>
+          </div>
+        </div> 
+      </aside>
+
+      <div class="main-content">
+        <div class="header_message">
+          <div class="btn"><a href="#">Effettua l'upgrade</a></div>
+        </div>
+          <div class="music-selection">
+
+            <nav class="categories-menu d_flex">
+              <ul class="d_flex">
+                <li><a class="active" href="#">IN EVIDENZA</a></li>
+                <li><a href="#">PODCAST</a></li>
+                <li><a href="#">CLASSIFICHE</a></li>
+                <li><a href="#">GENERI E MOOD</a></li>
+                <li><a href="#">NUOVE USCITE</a></li>
+                <li><a href="#">SCOPRI</a></li>
+              </ul>
+            </nav>
+
+            <!-- Recently Played  -->
+            <section class="recently-played">
+              <div class="grid-header">
+                <h2>Recently played</h2>
+              </div>
+              <div class="grid">
+                <div class="item">
+                  <img class="cover" src="assets/img/metal_lifting.jpg" alt="Metal Lifting">
+                  <h4 class="title">Heavy Metal</h4>
+                  <span class="subtitle">Subtitle</span>
+                </div>
+                <div class="item">
+                  <img class="cover" src="assets/img/stranger.jpeg" alt="Stranger Things">
+                  <h4 class="title">Stranger Things, Vol.1 (a Netflix Original Series Soundtrack)</h4>
+                  <span class="subtitle">Kyle Dixon & Micheal Stein</span>
+                </div>
+                <div class="item">
+                  <img class="cover" src="assets/img/aquietplace.jpeg" alt="A Quiet Place">
+                  <h4 class="title">A quiet place</h4>
+                  <span class="subtitle">Subtitle</span>
+                </div>
+                <div class="item">
+                  <img class="cover" src="assets/img/split.jpeg" alt="Split">
+                  <h4 class="title">Splitl</h4>
+                  <span class="subtitle">Subtitle</span>
+                </div>
+                <div class="item">
+                  <img class="cover" src="assets/img/cure.jpeg" alt="Cure">
+                  <h4 class="title">A cure for wellness</h4>
+                  <span class="subtitle">Subtitle</span>
+                </div>
+                <div class="item">
+                  <img class="cover" src="assets/img/sinister.jpeg" alt="Sinister">
+                  <h4 class="title">Sinister</h4>
+                  <span class="subtitle">Subtitle</span>
+                </div>
+              </div>
+            </section>
+            <!-- /Recently Played  -->
+
+            <!-- Created For  -->
+            <section class="created-for">
+              <div class="grid-header">
+                <h2>Creato per Fabio Ferrero</h2>
+                <span class="section-text subtitle">Più ascolti, più accurati saranno i suggerimenti</span>
+              </div>
+              <div class="grid">
+                <div class="item">
+                  <img class="cover" src="assets/img/radar.jpeg" alt="Radar">
+                  <h4 class="title">Release Radar</h4>
+                </div>
+                <div class="item">
+                  <img class="cover" src="assets/img/mixdaily.jpeg" alt="DailyMix">
+                  <h4 class="title">Daily Mix 1</h4>
+                </div>
+              </div>
+            </section>
+            <!-- /Created For  -->
+
+            <!-- Popular Artists  -->
+            <section class="popular-artists">
+              <div class="grid-header">
+                <h2>Artisti più popolari</h2>
+                <span class="section-text subtitle">Più ascolti, più accurati saranno i suggerimenti</span>
+              </div>
+              <div class="grid">
+                <div class="item">
+                  <img class="cover" src="assets/img/youg.jpeg" alt="Lana del Rey">
+                  <h4 class="title">Lana del Rey</h4>
+                </div>
+                <div class="item">
+                  <img class="cover" src="assets/img/einaudi.jpeg" alt="Einaudi">
+                  <h4 class="title">Ludovico Einaudi</h4>
+                </div>
+              </div>
+            </section>
+            <!-- /Popular Artists  -->
+                
+          </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="play-bar d_flex">
+      <div class="playing">IN RIPRODUZIONE</div>
+      <div class="music-controls">CONTROLLI</div>
+      <div class="volume-controls">VOLUME</div>
+  </footer>
+
 </body>
 </html>
