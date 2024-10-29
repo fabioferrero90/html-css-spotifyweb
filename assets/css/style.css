@@ -26,6 +26,11 @@ ul {
 
 a {
   text-decoration:none;
+  color:var(--secondary-color)
+}
+
+a:hover {
+  color:white;
 }
 
 /* Debug  */
@@ -66,6 +71,18 @@ h2 {
   font-weight:900;
 }
 
+svg {
+  fill:var(--secondary-color)
+}
+
+.of_hidden {
+  overflow: hidden;
+}
+
+.of_auto {
+  overflow: auto;
+}
+
 /* Body Syzing \ Layout  */
 
 .main-wrapper {
@@ -77,18 +94,28 @@ h2 {
 .sidebar-wrapper {
   background-color: var(--sidebar-bg);
   color:white;
-  overflow: hidden;
   width:230px;
   padding:20px;
 }
 
 .sidebar {
-  height: calc(100% - 80px);
+  flex-direction: column;
+  justify-content: start;
+  height:calc(100% - 80px);
  }
 
 /* Left Sidebar CSS  */
 .logo {
   max-width: 70%;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.side-menu {
+  align-items:self-start;
+  flex-shrink:0;
 }
 
 .side-menu ul {
@@ -99,21 +126,90 @@ h2 {
 }
 
 .side-menu ul li a{
+  position: relative;
   height:25px;
   color:var(--secondary-color)
+}
+
+.side-menu ul li a.active{
+  height:25px;
+  color: white;
+}
+
+.side-menu .active svg{
+  height:25px;
+  fill: white;
+}
+
+.side-menu .active::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 2px;
+  height: 25px;
+  background-color: greenyellow;
 }
 
 .side-menu ul li a:hover{
   color:white;
 }
 
+.side-menu ul li a:hover svg{
+  fill:white!important;
+}
+
 .side-menu ul li a > * {
   vertical-align: middle;
 }
 
-.side-menu ul img {
+.side-menu ul svg {
   max-width: 25px;
-  margin-right:.5rem;
+  margin-right:5px;
+  fill:var(--secondary-color)
+}
+
+.playlist .action-button {
+  margin:10px 0;
+}
+
+.playlist .action-button .box {
+  display: inline-block;
+  height:30px;
+  width:30px;
+  background-color: var(--secondary-color);
+  color:black;
+  font-size:2rem;
+  line-height: 30px;
+  text-align: center;
+  margin-right:10px;
+  vertical-align: middle;
+}
+
+.playlist .action-button span {
+  display: inline-block;
+  line-height:30px;
+  vertical-align: middle;
+}
+
+.playlist .action-button a:hover .box {
+  background-color: white;
+}
+
+.playlist .action-button a:hover {
+  color:white;
+}
+
+.playlist-nav {
+  height:calc(100vh - 500px);
+}
+
+.playlist-nav li{
+  padding:10px 0;
+}
+
+.playlist-nav a:hover{
+  color:white;
 }
 
 .bottom-bar .account {
@@ -130,15 +226,25 @@ h2 {
   border-bottom: 1px solid var(--secondary-color);
 }
 
-.bottom-bar .installapp img {
+.bottom-bar .installapp svg {
   height:20px;
+  margin-right:5px;
 }
 
-.bottom-bar .account img {
+.bottom-bar .installapp a:hover svg {
+  fill:white;
+}
+
+.bottom-bar .account:hover {
+  cursor: pointer;
+}
+
+.bottom-bar .account svg {
   margin: 5px 5px 0 0;
   height:30px;
   background-color: var(--secondary-color);
   border-radius: 50%;
+  fill: white;
 }
 
 .bottom-bar .account span {
@@ -149,7 +255,6 @@ h2 {
 .main-content {
   background-color: var(--content-bg);
   color:white;
-  overflow: auto;
   width:calc(100vw - 230px)
 }
 
@@ -236,7 +341,6 @@ h2 {
   border-radius:50%;
 }
 
-
 /* Play Bar CSS */
 
 .play-bar {
@@ -245,4 +349,16 @@ h2 {
   height:90px;
   background-color: var(--playBar-color);
   color:white;
+}
+
+
+
+/* Nasconde la sezione account se la finestra è troppo bassa  */
+@media (max-height:590px) {
+  .bottom-bar {
+    display:none;
+  }
+  .playlist-nav {
+    height:calc(100vh - 400px);
+  }
 }
