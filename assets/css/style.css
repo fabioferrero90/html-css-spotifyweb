@@ -109,6 +109,10 @@ svg {
   width: 115px;
 }
 
+.mobile-logo {
+  display:none;
+}
+
 .logo:hover {
   cursor: pointer;
 }
@@ -335,31 +339,32 @@ svg {
 }
 
 .main-content .grid .item {
+  position:relative;
   width: calc(100% / 6 - 15px);
 }
 
-.main-content .popular-artists .grid .cover {
+.main-content .popular-artists .grid img {
   border-radius:50%;
 }
 
 .main-content .grid .cover {
-  cursor:pointer;
   position:relative;
+  cursor:pointer;
 }
 
-.main-content .grid .cover::after {
+.main-content .grid .cover:hover::after {
   position:absolute;
-  top:10px;
-  left:10px;
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
-  font-size: 5rem;
+  font-size: 4rem;
   content:'\f144';
   color:white;
-  z-index:999;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
 }
 
-.main-content .grid .cover:hover {
+.main-content .grid .cover:hover img {
   opacity:0.3;
 }
 
@@ -386,11 +391,16 @@ svg {
 }
 
 .playing .album {
+  cursor: pointer;
   width:40px;
 }
 
 .playing .playing-info span {
   font-size:.7rem;
+}
+
+.playing .playing-info h5 {
+  cursor:pointer;
 }
 
 .playing .playing-info span:hover {
@@ -545,6 +555,16 @@ svg {
 }
 
 @media (max-width:600px) {
+
+  .logo {
+    display:none
+  }
+
+  .mobile-logo {
+    display:block;
+    filter:invert(1);
+  }
+
   .main-content .grid .item {
     width: calc(100% / 2 - 15px);
   }
