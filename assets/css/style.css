@@ -387,7 +387,7 @@ svg {
   flex-basis: calc(100% / 3);
   justify-content: start;
   align-items: center;
-  gap: 25px;
+  gap: .9rem;
 }
 
 .playing .album {
@@ -435,14 +435,14 @@ svg {
 .music-controls .progressbar {
   justify-content: center;
   align-items: space-around;
-  width:50vw;
+  width:40vw;
   max-width:430px;
 }
 
 .music-controls .progress-bar {
   position:relative;
   align-items: center;
-  width:40vw;
+  width:35vw;
   height:5px;
   background-color: var(--secondary-color);
   margin:0 20px;
