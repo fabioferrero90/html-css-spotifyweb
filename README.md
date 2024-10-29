@@ -20,7 +20,7 @@ Utilizzare le conoscenze di HTML\CSS acquisite fino ad oggi per ricreare la pagi
 
 ---
 
-<img src="assets/Readme-Cover-Img.png">
+<img src="./assets/readme-cover-img.png">
 
 ---
 All'interno della repo sono hostati i video e gli screenshot forniti per la creazione del codice.
