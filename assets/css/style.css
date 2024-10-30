@@ -1,12 +1,10 @@
+/* General Styling and CSS Resets  */
+
 * {
   margin:0;
   padding:0;
   box-sizing: border-box;
 } 
-
-body {
-  font-family: "Montserrat", sans-serif;
-}
 
 :root {
   --playBar-color:#282828;
@@ -14,6 +12,11 @@ body {
   --sidebar-bg: #000000;
   --header-bg: #080b12;
   --secondary-color: #707377;
+}
+
+body {
+  height:100vh;
+  font-family: "Montserrat", sans-serif;
 }
 
 img {
@@ -33,9 +36,13 @@ a:hover {
   color:white;
 }
 
-/* Debug  */
-.debug {
-  background-color: rgba(200, 251, 97, 0.486)!important;
+h2 {
+  font-size: 1.8rem;
+  font-weight:900;
+}
+
+svg {
+  fill:var(--secondary-color)
 }
 
 /* Utility */
@@ -53,10 +60,6 @@ a:hover {
   font-size:.8rem;
 }
 
-.v-middle {
-  vertical-align: middle;
-}
-
 .btn a {
   color:white;
 }
@@ -67,15 +70,6 @@ a:hover {
 
 .btn:hover {
   transform:scale(1.05);
-}
-
-h2 {
-  font-size: 1.8rem;
-  font-weight:900;
-}
-
-svg {
-  fill:var(--secondary-color)
 }
 
 .of_hidden {
@@ -89,11 +83,11 @@ svg {
 .mobile {
   display: none;
 }
-/* Body Syzing \ Layout  */
 
+/* Body Syzing \ Layout  */
 .main-wrapper {
   justify-content: flex-start;
-  height:calc(100vh - 90px);
+  height:calc(100% - 90px);
   width:100vw;
 }
 
@@ -330,12 +324,17 @@ svg {
 }
 
 .header_message {
+  position:sticky;
+  opacity: 0.8;
+  top:0;
   display: flex;
   align-items: center;
   justify-content: end;
   height:80px;
   background-color: var(--header-bg);
   padding:20px;
+  z-index:2;
+
 }
 
 .header_message .btn {
@@ -428,7 +427,7 @@ svg {
   margin:5px;
 }
 
-.play-bar .music-controls {
+.music-controls {
   width:50vw;
   max-width:430px;
 }
@@ -500,16 +499,16 @@ svg {
   font-size: .8rem; 
 }
 
-.play-bar .volume-controls {
+.volume-controls {
   justify-content: end;
   align-items: center;
 }
 
-.play-bar .volume-controls i {
+.volume-controls i {
   padding: 0 5px;
 }
 
-.play-bar .volume-controls .volume-bar {
+.volume-controls .volume-bar {
   position:relative;
   width:10vw;
   max-width:100px;
@@ -524,7 +523,7 @@ svg {
   align-items: center;
 }
 
-.play-bar .volume-controls .volume-bar .volume-bar-set {
+.volume-controls .volume-bar .volume-bar-set {
   position:absolute;
   height:5px;
   left: 0;
@@ -534,7 +533,7 @@ svg {
   transition:height ease .1s;
 }
 
-.play-bar .volume-controls .volume-bar .volume-bar-set::after {
+.volume-controls .volume-bar .volume-bar-set::after {
   display: none;
   position:absolute;
   font-family: 'Font Awesome\ 5 Free';
@@ -545,12 +544,12 @@ svg {
   top:-50%;
 }
 
-.play-bar .volume-controls .volume-bar:hover .volume-bar-set {
+.volume-controls .volume-bar:hover .volume-bar-set {
   height:8px;
   background-color: yellowgreen;
 }
 
-.play-bar .volume-controls .volume-bar:hover .volume-bar-set::after {
+.volume-controls .volume-bar:hover .volume-bar-set::after {
   display:block
 }
 
@@ -564,6 +563,7 @@ svg {
   }
 }
 
+/* Responsive Screen adaption  */
 @media (max-width:1100px) {
   .main-content .grid .item {
     width: calc(100% / 4 - 15px);
@@ -630,9 +630,6 @@ svg {
   .side-menu ul svg {
     margin:0;
   }
-  
-  
-
 }
 
 @media (max-width:500px) {
