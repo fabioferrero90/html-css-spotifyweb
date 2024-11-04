@@ -120,14 +120,13 @@ svg {
 
 .side-menu {
   align-items:self-start;
-  flex-shrink:0;
 }
 
 .side-menu ul {
   flex-direction: column;
   justify-content: space-between;
   height:100px;
-  margin: 2rem 0;
+  margin: 30px 0;
   gap:2px;
 }
 
@@ -170,9 +169,13 @@ svg {
 }
 
 .side-menu ul svg {
-  max-width: 25px;
+  width: 25px;
   margin-right:5px;
   fill:var(--secondary-color)
+}
+
+.playlist {
+  height:calc(100% - 190px);
 }
 
 .playlist .action-button {
@@ -207,7 +210,7 @@ svg {
 }
 
 .playlist-nav {
-  height:calc(100vh - 500px);
+  height:calc(100% - 80px);
 }
 
 .playlist-nav li {
@@ -217,6 +220,7 @@ svg {
 .playlist-nav a:hover {
   color:white;
 }
+
 
 .bottom-bar .account {
   padding:10px 0;
@@ -291,6 +295,10 @@ svg {
 .main-content .categories-menu ul a:hover {
   color: white;
   transform:scale(1.1)
+}
+
+.main-content .categories-menu ul a.active {
+  color:white;
 }
 
 .main-content .categories-menu ul a.active::after {
@@ -473,29 +481,14 @@ svg {
   position:absolute;
   background-color: white;
   height: 5px;
-  width: 15%;
+  width: 45%;
   left: 0;
   border-radius:3rem;
   transition:height ease .1s;
 }
 
-.music-controls .progress-bar .progress-bar-elapsed::after {
-  display:none;
-  position:absolute;
-  font-family: 'Font Awesome\ 5 Free';
-  font-weight: 900;
-  content:'\f111';
-  color:white;
-  right:0;
-  top:-50%;
-}
-
-.music-controls .progress-bar:hover .progress-bar-elapsed {
-  height:8px;
-  background-color: yellowgreen;
-}
-
-.music-controls .progress-bar:hover .progress-bar-elapsed::after {
+.music-controls .progress-bar:hover .progress-bar-elapsed::after,
+.volume-controls .volume-bar:hover .volume-bar-set::after {
   display:block;
 }
 
@@ -537,33 +530,33 @@ svg {
   transition:height ease .1s;
 }
 
+.music-controls .progress-bar .progress-bar-elapsed::after,
 .volume-controls .volume-bar .volume-bar-set::after {
-  display: none;
+  display:none;
   position:absolute;
   font-family: 'Font Awesome\ 5 Free';
   font-weight: 900;
   content:'\f111';
   color:white;
-  right:-50%;
+  right:0;
   top:-50%;
+  transform: translateX(50%);
 }
 
+.music-controls .progress-bar:hover .progress-bar-elapsed,
 .volume-controls .volume-bar:hover .volume-bar-set {
   height:8px;
   background-color: yellowgreen;
 }
 
-.volume-controls .volume-bar:hover .volume-bar-set::after {
-  display:block
-}
-
 /* Nasconde la sezione account se la finestra è troppo bassa  */
 @media (max-height:590px) {
   .bottom-bar {
-    display:none;
+    display: none;
   }
+
   .playlist-nav {
-    height:calc(100vh - 400px);
+    height:100%;
   }
 }
 
@@ -601,6 +594,7 @@ svg {
 
   .sidebar-wrapper {
     width:50px;
+    height:100%;
   }
   
   .main-content {
@@ -628,7 +622,7 @@ svg {
   }
 
   .side-menu .active::before{
-    left: -13px;
+    left: -12px;
   }
 
   .side-menu ul svg {
